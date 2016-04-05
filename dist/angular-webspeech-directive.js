@@ -139,7 +139,8 @@
               if (event.results[i].isFinal) {
                 safeApply(function () {
                   $scope.ngModel.value = trans;
-                  $scope.ngModel.onFinished();
+                  if($scope.ngModel.onFinished) $scope.ngModel.onFinished();
+                  $scope.toggleStartStop();
                   return $scope.ngModel.recognizing = false;
                 });
               }

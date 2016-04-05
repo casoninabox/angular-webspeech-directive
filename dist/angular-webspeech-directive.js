@@ -105,7 +105,6 @@
             $scope.ngModel.recognizing = true;
             setIcon('recording');
             setMsg('info_speak_now');
-            console.log('onstart', event);
             return onerror = function (event, message) {
               console.log('onerror', event, message);
               $scope.ngModel.recognizing = false;
@@ -140,6 +139,7 @@
               if (event.results[i].isFinal) {
                 safeApply(function () {
                   $scope.ngModel.value = trans;
+                  $scope.ngModel.onFinished();
                   return $scope.ngModel.recognizing = false;
                 });
               }

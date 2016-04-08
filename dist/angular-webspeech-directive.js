@@ -58,7 +58,7 @@
             recognizing: false
           };
           scope.$watch('ngModel', function (newVal, oldVal) {
-            return console.log(newVal);
+            // return console.log(newVal);
           }, true);
           safeApply = function (fn) {
             var phase;
